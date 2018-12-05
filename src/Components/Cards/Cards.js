@@ -24,6 +24,14 @@ import IMG from '../../Images/Darjeeling-Hot-Momos-Colourful-veg-momos-Koramanga
 const styles = theme => ({
   card: {
     maxWidth: 400,
+    textAlign:'left',
+    boxShadow: '12px 15px 20px rgba(0, 0, 0, 0.1)',
+    transition: '0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out',
+    borderTop:'2px solid #ebebeb',
+    borderLeft:'2px solid #ebebeb',
+    marginLeft:'auto',
+    marginRight:'auto',
+    marginTop:'30px'
   },
   media: {
     height: 0,
@@ -56,10 +64,11 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary,
-  }
+  },
+  
 });
 
-class RecipeReviewCard extends React.Component {
+class Cards extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -68,26 +77,11 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <Grid container spacing={24}>
       <Grid item xs={6}>
       <Card className={classes.card}>
-       
         <CardHeader
-          // avatar={
-          //   <Avatar aria-label="Recipe" className={classes.avatar}>
-          //     R
-          //   </Avatar>
-          // }
-          action={
-            <IconButton>
-              {/* <MoreVertIcon /> */}
-              {/* <ExpandMoreIcon /> */}
-              
-        
-            </IconButton>
-          }
           title="Darjeeling Hot Momos"
           subheader="Koramangala, Bengaluru"
         />
@@ -108,7 +102,7 @@ class RecipeReviewCard extends React.Component {
             <Typography paragraph>
               "Streets are an integral part of how a city and its culture has evolved."
             </Typography>
-            <Typography paragraph> Must-try Dishes</Typography>
+            <Typography component="h6" variant="h6"> Must-try Dishes</Typography>
             <Typography paragraph>
             Filter coffee, Mini Idly, Keer Vada, Sabudan Vada, Special Kozhukattal
             </Typography>
@@ -136,9 +130,9 @@ class RecipeReviewCard extends React.Component {
          <Typography component="p">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
          </Typography>
-         <Typography component="h2" variant="h6" gutterBottom> Attending curators</Typography>
+         <Typography component="h6" variant="h6" gutterBottom> Attending curators</Typography>
             <Typography paragraph>
-            Filter coffee, Mini Idly, Keer Vada, Sabudan Vada, Special Kozhukattal
+            Maheima Kapur, Jane Doe, Meenakshi Kumari
             </Typography>
             <Buttons/>
        </CardContent>
@@ -150,8 +144,8 @@ class RecipeReviewCard extends React.Component {
   }
 }
 
-RecipeReviewCard.propTypes = {
+Cards.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(RecipeReviewCard);
+export default withStyles(styles)(Cards);
