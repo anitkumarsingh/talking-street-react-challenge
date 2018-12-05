@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background: linear-gradient(rgba(0,0,90,0.9),rgba(42,143,10,0.9)),url('./Images/background1.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .App-logo {
@@ -10,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #7b1fa2;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -31,4 +36,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+h5.headerText{
+  font-size: 25px !important;
+    margin-top: 0px !important;
+    text-align: center !important;
+    display: flex !important;
+    font-family: Roboto Condensed !important;
+    color: white;
+    /* background: linear-gradient(to left,gray,lightgray,white,gray,lightgray) !important; */
+
+}
+h5:before, h5:after {
+  color: white !important;
+  content: '' !important;
+  flex: 1 !important;
+  border-bottom: groove 2px !important;
+  margin: auto 0.25em !important;
+  box-shadow: 0 -1px !important;
 }

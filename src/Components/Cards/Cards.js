@@ -98,14 +98,14 @@ class Cards extends React.Component {
           </IconButton>
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph>
-              "Streets are an integral part of how a city and its culture has evolved."
-            </Typography>
-            <Typography component="h6" variant="h6"> Must-try Dishes</Typography>
-            <Typography paragraph>
-            Filter coffee, Mini Idly, Keer Vada, Sabudan Vada, Special Kozhukattal
-            </Typography>
+          <CardContent style={{backgroundColor:'#ebebeb'}}>
+                <Typography paragraph>
+                 <i> "Streets are an integral part of how a city and its culture has evolved."</i>
+                </Typography>
+                <Typography component="h6" variant="h6"> Must-try Dishes</Typography>
+                <Typography paragraph>
+                      Filter coffee, Mini Idly, Keer Vada, Sabudan Vada, Special Kozhukattal
+                </Typography>
           </CardContent>
         </Collapse>
         
@@ -113,7 +113,6 @@ class Cards extends React.Component {
           className={classes.media}
           image={IMG}
           title="Darjeeling Hot Momos"
-         
         />
         <CardContent>
           <Typography component="p">
@@ -130,6 +129,7 @@ class Cards extends React.Component {
          <Typography component="p">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
          </Typography>
+         <hr style={{marginTop:'30px',display:'block', height:'1px',border:'0',borderTop:'1px solid #ebebeb'}}/>
          <Typography component="h6" variant="h6" gutterBottom> Attending curators</Typography>
             <Typography paragraph>
             Maheima Kapur, Jane Doe, Meenakshi Kumari

@@ -85,7 +85,7 @@ function CustomizedInputs(props) {
       <Button
         variant="contained"
         color="primary"
-        enableRipple
+        disableRipple
         className={classNames(classes.margin, classes.bootstrapRoot)}
       >
         INVITE
