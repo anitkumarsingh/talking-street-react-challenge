@@ -8,14 +8,17 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+// import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Grid from '@material-ui/core/Grid';
+// import Paper from '@material-ui/core/Paper';
+import Buttons from '../Buttons/Buttons';
 import IMG from '../../Images/Darjeeling-Hot-Momos-Colourful-veg-momos-Koramangala-Bangalore.jpg';
 
 const styles = theme => ({
@@ -46,6 +49,14 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }
 });
 
 class RecipeReviewCard extends React.Component {
@@ -59,7 +70,10 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
 
     return (
+      <Grid container spacing={24}>
+      <Grid item xs={6}>
       <Card className={classes.card}>
+       
         <CardHeader
           // avatar={
           //   <Avatar aria-label="Recipe" className={classes.avatar}>
@@ -114,36 +128,24 @@ class RecipeReviewCard extends React.Component {
             make them more appealing and nutritious.
           </Typography>
         </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
-          <IconButton aria-label="Add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="Share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton
-            className={classnames(classes.expand, {
-              [classes.expandOpen]: this.state.expanded,
-            })}
-            onClick={this.handleExpandClick}
-            aria-expanded={this.state.expanded}
-            aria-label="Show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph>
-              "Streets are an integral part of how a city and its culture has evolved."
-            </Typography>
-            <Typography paragraph> Must-try Dishes</Typography>
+      </Card>
+      </Grid>
+      <Grid item xs={6}>
+      <Card className={classes.card}>
+       <CardContent>
+         <Typography component="p">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+         </Typography>
+         <Typography component="h2" variant="h6" gutterBottom> Attending curators</Typography>
             <Typography paragraph>
             Filter coffee, Mini Idly, Keer Vada, Sabudan Vada, Special Kozhukattal
             </Typography>
-          </CardContent>
-        </Collapse>
-      </Card>
+            <Buttons/>
+       </CardContent>
+       
+     </Card>
+        </Grid>
+      </Grid>
     );
   }
 }
