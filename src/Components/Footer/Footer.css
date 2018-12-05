@@ -1,0 +1,36 @@
+.footer-box{
+    background: url('../../Images/background-image_01.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    transform: rotate(-180deg);
+    height:110vh;
+    /* background-color: #380792; */
+}
+.footer-box p{
+    transform: rotate(180deg);
+    /* position: relative; */
+    /* top: 50%; */
+}
+.footer-text{
+  text-align: -webkit-center;
+  font-size:22px;
+  color:white;
+}
+  .useLess{
+      margin-bottom: 0;
+      background-color: #6109fe;
+  }
+  .myPic{
+    border-radius: 100%;
+    transform: rotate(-180deg);
+    position: absolute;
+    margin-left:auto;
+    margin-right: auto; 
+    left:40%;
+    right: 50%;
+    top:20%;
+    border: 5px solid dodgerblue;
+    box-shadow: 12px 15px 250px 300px  rgba(197, 80, 125, 0.726);
+    transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;
+  }
