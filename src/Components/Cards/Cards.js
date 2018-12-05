@@ -14,7 +14,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import Buttons from '../Buttons/Buttons';
 import Data from '../../DataSource/Data';
-
 import IMG from '../../Images/Darjeeling-Hot-Momos-Colourful-veg-momos-Koramangala-Bangalore.jpg';
 
 const styles = theme => ({
