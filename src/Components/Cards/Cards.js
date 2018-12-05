@@ -8,17 +8,13 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-// import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-// import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-// import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Grid from '@material-ui/core/Grid';
-// import Paper from '@material-ui/core/Paper';
 import Buttons from '../Buttons/Buttons';
+import Data from '../../DataSource/Data';
+
 import IMG from '../../Images/Darjeeling-Hot-Momos-Colourful-veg-momos-Koramangala-Bangalore.jpg';
 
 const styles = theme => ({
@@ -54,9 +50,6 @@ const styles = theme => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
-  avatar: {
-    backgroundColor: red[500],
-  },
   root: {
     flexGrow: 1,
   },
@@ -69,7 +62,15 @@ const styles = theme => ({
 });
 
 class Cards extends React.Component {
-  state = { expanded: false };
+  constructor(){
+    super();
+    this.state ={
+      expanded: false,
+      Datas:Data
+    }
+    console.log(Data);
+  }
+  
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -77,67 +78,77 @@ class Cards extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const items =this.state.Datas.foods.map((item,i)=>{
+      return(
+       {
+         'Title':item.title,
+         'Location':item.Location,
+         'shop-quotes':item["shop-quotes"], 
+         'option-title':item["option-title"],
+         'options':item.options,
+         'description':item.description
+       }
+      )
+    }); 
+    console.log(items[0]["shop-quotes"]);
     return (
       <Grid container spacing={24}>
-      <Grid item xs={6}>
-      <Card className={classes.card}>
-        <CardHeader
-          title="Darjeeling Hot Momos"
-          subheader="Koramangala, Bengaluru"
-        />
-        <CardActions className={classes.actions} disableActionSpacing>
-          <IconButton
-            className={classnames(classes.expand, {
-              [classes.expandOpen]: this.state.expanded,
-            })}
-            onClick={this.handleExpandClick}
-            aria-expanded={this.state.expanded}
-            aria-label="Show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-          <CardContent style={{backgroundColor:'#ebebeb'}}>
-                <Typography paragraph>
-                 <i> "Streets are an integral part of how a city and its culture has evolved."</i>
+        <Grid item xs={6}>
+            <Card className={classes.card}>
+              <CardHeader
+                title={items[0].Title}
+                subheader={items[0].Location}
+              />
+              <CardActions className={classes.actions} disableActionSpacing>
+                <IconButton
+                  className={classnames(classes.expand, {
+                    [classes.expandOpen]: this.state.expanded,
+                  })}
+                  onClick={this.handleExpandClick}
+                  aria-expanded={this.state.expanded}
+                  aria-label="Show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                <CardContent style={{backgroundColor:'#ebebeb'}}>
+                      <Typography paragraph>
+                         <i>"{items[0]["shop-quotes"]}"</i>
+                      </Typography>
+                      <Typography component="h6" variant="h6">{items[0]["option-title"]}</Typography>
+                      <Typography paragraph>
+                          {items[0].options}
+                      </Typography>
+                </CardContent>
+              </Collapse>
+
+              <CardMedia
+                className={classes.media}
+                image={IMG}
+                title={items[0].Title}
+              />
+              <CardContent>
+                <Typography component="p">
+                  {items[0].description}
                 </Typography>
-                <Typography component="h6" variant="h6"> Must-try Dishes</Typography>
-                <Typography paragraph>
-                      Filter coffee, Mini Idly, Keer Vada, Sabudan Vada, Special Kozhukattal
-                </Typography>
-          </CardContent>
-        </Collapse>
-        
-        <CardMedia
-          className={classes.media}
-          image={IMG}
-          title="Darjeeling Hot Momos"
-        />
-        <CardContent>
-          <Typography component="p">
-            This stall looks like any other momo stall but has a lot more to offer. Saneeta serves a wide varity of momos with different stuffings.Although there is only one Non-veg momo(chicken),which is also great, this stall is a treat for the vegetarians.
-            There are kinds of veg momos with a different stuffing in each, to add to that, they add natural colouring from vegetables to the dough to
-            make them more appealing and nutritious.
-          </Typography>
-        </CardContent>
-      </Card>
-      </Grid>
+              </CardContent>
+            </Card>
+        </Grid>
       <Grid item xs={6}>
-      <Card className={classes.card}>
-       <CardContent>
-         <Typography component="p">
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-         </Typography>
-         <hr style={{marginTop:'30px',display:'block', height:'1px',border:'0',borderTop:'1px solid #ebebeb'}}/>
-         <Typography component="h6" variant="h6" gutterBottom> Attending curators</Typography>
-            <Typography paragraph>
-            Maheima Kapur, Jane Doe, Meenakshi Kumari
-            </Typography>
-            <Buttons/>
-       </CardContent>
-       
-     </Card>
+            <Card className={classes.card}>
+            <CardContent>
+              <Typography component="p">
+                  {items[1].description}
+              </Typography>
+              <hr style={{marginTop:'30px',display:'block', height:'1px',border:'0',borderTop:'1px solid #ebebeb'}}/>
+              <Typography component="h6" variant="h6" gutterBottom>{items[1]["option-title"]}</Typography>
+                  <Typography paragraph>
+                    {items[1].options}
+                  </Typography>
+                  <Buttons/>
+            </CardContent>
+          </Card>
         </Grid>
       </Grid>
     );
