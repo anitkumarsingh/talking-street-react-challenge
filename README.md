@@ -1,6 +1,9 @@
 
 ## Talking Street React Challenge
 
-#### screenshot
-![](Images\Screenshot_2018-12-05 React Assignment By Anit Kumar.png)
+### screenshots
+![](src/Images/Screenshot_2018-12-06%20React%20Assignment%20By%20Anit%20Kumar.png)
 
+![](src/Images/Screenshot_2018-12-06%20React%20Assignment%20By%20Anit%20Kumar(1).png)
+
+#### @ Anit Kumar, 2018  :blush:
