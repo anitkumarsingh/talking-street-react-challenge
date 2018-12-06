@@ -83,8 +83,8 @@ class Cards extends React.Component {
     }); 
     console.log(items[0]["shop-quotes"]);
     return (
-      <Grid container spacing={24}>
-        <Grid item xs={6}>
+      <Grid container spacing={20}>
+        <Grid item xs={12} lg={6} xl={6} md={6} sm={6} >
             <Card className={classes.card}>
               <CardHeader
                 title={items[0].Title}
@@ -126,7 +126,7 @@ class Cards extends React.Component {
               </CardContent>
             </Card>
         </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} lg={6} xl={6} md={6} sm={6}>
             <Card className={classes.card}>
             <CardContent>
               <Typography component="p">

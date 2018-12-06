@@ -14,7 +14,7 @@ class App extends Component {
         <Cards/>
         {/* <Footer/> */}
         <h5 className="headerText"> &copy; 2018, Coded By Anit Kumar</h5>
-          <div class="icons-bar">
+          <div className="icons-bar">
               <a href="https://www.linkedin.com/in/anit-kumar" target="_blank" rel="noopener noreferrer" className="linkedin" id="profile-link"><i className="fa fa-linkedin"></i></a>
               <a href="https://www.freecodecamp.org/anitkumar" id="profile-link" target="_blank" rel="noopener noreferrer" className="freecodecamp"><i className="fa fa-free-code-camp"></i></a>
               <a href="https://codepen.io/Anitkumar" className="codepen" target="_blank" rel="noopener noreferrer"><i className="fa fa-codepen"></i></a>
