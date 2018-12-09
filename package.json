@@ -2,10 +2,13 @@
   "name": "talking-street-assignment",
   "version": "0.1.0",
   "private": true,
-  "author":"Anit Kumar",
+  "author": "Anit Kumar",
+  "homepage": "https://anitkumarsingh.github.io/Talking-Street-React-Challenge",
   "dependencies": {
     "@material-ui/core": "^3.6.1",
     "@material-ui/icons": "^3.0.1",
+    "g": "^2.0.1",
+    "gh-pages": "^2.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
@@ -14,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
