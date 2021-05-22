@@ -1,13 +1,16 @@
 .App {
   text-align: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.8),rgba(255, 255, 255,0.9)),url('./Images/background1.jpg');
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url('./Images/background1.jpg');
   /* background: linear-gradient(rgba(255, 255, 255, 0.9),rgba(123, 31, 162,0.9)),url('./Images/background1.jpg'); */
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   padding-bottom: 30px;
- 
 }
 
 .App-logo {
@@ -40,24 +43,24 @@
     transform: rotate(360deg);
   }
 }
-h5.headerText{
-    font-size: 25px !important;
-    margin-top: -290px !important;
-    text-align: left !important;
-    position: fixed;
-    right: -110px;
-    display: flex !important;
-    font-family: Roboto Condensed !important;
-    color: #7b1fa2;
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-     transform: rotate(270deg);
-    writing-mode: rl-bt;
-    /* background: linear-gradient(to left,gray,lightgray,white,gray,lightgray) !important; */
-
+h5.headerText {
+  font-size: 25px !important;
+  margin-top: -290px !important;
+  text-align: left !important;
+  position: fixed;
+  right: -110px;
+  display: flex !important;
+  font-family: Roboto Condensed !important;
+  color: #7b1fa2;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  writing-mode: rl-bt;
+  /* background: linear-gradient(to left,gray,lightgray,white,gray,lightgray) !important; */
 }
-h5:before, h5:after {
+h5:before,
+h5:after {
   color: #ffbb00 !important;
   content: '' !important;
   flex: 1 !important;
@@ -65,65 +68,70 @@ h5:before, h5:after {
   margin: auto 0.25em !important;
   box-shadow: 0 -1px !important;
 }
-.icons-bar{
-  position:fixed;
-  margin-top:-20%;
-  width:750px;
-  -webkit-transform:translateY(-50%);
-  -ms-transform:translateY(-50%);
-  transform:translateY(-50%)
+.icons-bar {
+  position: fixed;
+  margin-top: -20%;
+  width: 750px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
-.icons-bar a{
-  display:block;
-  padding:16px;
-  text-align:center;
-  font-size:25px;
-  color:white;
-  border-radius:100%;
-  transition:all .3s ease;
-  margin-bottom:15px;
+.icons-bar a {
+  display: block;
+  padding: 16px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
   box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.1);
-   transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;
+  transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out,
+    0.2s border-color ease-in-out;
 }
-.icons-bar a:hover{
-  border-radius:0 50% 50% 0;
-  width:40px;
+.icons-bar a:hover {
+  border-radius: 0 50% 50% 0;
+  width: 40px;
 }
-.linkedin{
-  background-color:#3B5998;
-  width:4%;
-  color:white;
+.linkedin {
+  background-color: #3b5998;
+  width: 4%;
+  color: white;
 }
-.freecodecamp{
-  background-color:green;
-  width:4%;
-  color:white;
+.freecodecamp {
+  background-color: green;
+  width: 4%;
+  color: white;
 }
-.codepen{
-  background-color:teal;
-  width:4%;
-  color:white;
+.codepen {
+  background-color: teal;
+  width: 4%;
+  color: white;
 }
-.github{
-  background-color:#a52871;
-  width:4%;
-  color:white;
+.github {
+  background-color: #a52871;
+  width: 4%;
+  color: white;
 }
-.hackerrank{
-  background-color:green;
-  width:4%;
-  color:white;
+.hackerrank {
+  background-color: green;
+  width: 4%;
+  color: white;
 }
-.linkedin:hover,.codepen:hover,.github:hover,.hackerrank:hover,.freecodecamp:hover{
-  background-color:gray;
+.linkedin:hover,
+.codepen:hover,
+.github:hover,
+.hackerrank:hover,
+.freecodecamp:hover {
+  background-color: gray;
   transition: all;
 }
 
-@media screen and (max-width:1065px){
-  .icons-bar{
+@media screen and (max-width: 1065px) {
+  .icons-bar {
     display: none;
   }
-  h5.headerText{
+  h5.headerText {
     visibility: hidden;
   }
 }
